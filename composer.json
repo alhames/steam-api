@@ -1,0 +1,28 @@
+{
+    "name": "alhames/steam-api",
+    "description": "Steam API Client",
+    "keywords": ["steam", "api", "api-client"],
+    "homepage": "https://github.com/alhames/steam-api",
+    "type": "library",
+    "require": {
+        "php": "^7.1",
+        "alhames/api": "dev-master",
+        "alhames/phphelper": "^1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alhames",
+            "email": "alhames@mail.ru",
+            "homepage": "https://alhames.ru/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/alhames/steam-api/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alhames\\SteamApi\\": "src/Alhames/SteamApi"
+        }
+    }
+}

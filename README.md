@@ -1,2 +1,1 @@
-# steam-api
-Steam API Client
+# Steam API Client
