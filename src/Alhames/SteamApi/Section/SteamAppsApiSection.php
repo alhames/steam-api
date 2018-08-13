@@ -16,6 +16,6 @@ class SteamAppsApiSection extends AbstractSteamApiSection
      */
     public function getAppList()
     {
-        return $this->request('SteamApps/GetAppList/v2');
+        return $this->request('ISteamApps/GetAppList/v2');
     }
 }

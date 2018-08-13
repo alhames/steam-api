@@ -18,7 +18,7 @@ class SteamUserApiSection extends AbstractSteamApiSection
      */
     public function getPlayerSummaries(array $steamIds)
     {
-        return $this->request('SteamUser/GetPlayerSummaries/v2', ['steamids' => implode(',', $steamIds)]);
+        return $this->request('ISteamUser/GetPlayerSummaries/v2', ['steamids' => implode(',', $steamIds)]);
     }
 
     /**
@@ -36,7 +36,7 @@ class SteamUserApiSection extends AbstractSteamApiSection
             $query['relationship'] = $relationship;
         }
 
-        return $this->request('SteamUser/GetFriendList/v1', $query);
+        return $this->request('ISteamUser/GetFriendList/v1', $query);
     }
 
     /**
@@ -48,7 +48,7 @@ class SteamUserApiSection extends AbstractSteamApiSection
      */
     public function getPlayerBans(array $steamIds)
     {
-        return $this->request('SteamUser/GetPlayerBans/v1', ['steamids' => implode(',', $steamIds)]);
+        return $this->request('ISteamUser/GetPlayerBans/v1', ['steamids' => implode(',', $steamIds)]);
     }
 
     /**
@@ -58,6 +58,6 @@ class SteamUserApiSection extends AbstractSteamApiSection
      */
     public function getUserGroupList(int $steamId)
     {
-        return $this->request('SteamUser/GetUserGroupList/v1', ['steamid' => $steamId]);
+        return $this->request('ISteamUser/GetUserGroupList/v1', ['steamid' => $steamId]);
     }
 }

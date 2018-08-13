@@ -18,7 +18,7 @@ class SteamUserStatsApiSection extends AbstractSteamApiSection
      */
     public function getGlobalAchievementPercentagesForApp(int $appId)
     {
-        return $this->request('SteamUserStats/GetGlobalAchievementPercentagesForApp/v2', ['gameid' => $appId]);
+        return $this->request('ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2', ['gameid' => $appId]);
     }
 
     /**
@@ -41,7 +41,7 @@ class SteamUserStatsApiSection extends AbstractSteamApiSection
             $query['enddate'] = $endDate->getTimestamp();
         }
 
-        return $this->request('SteamUserStats/GetGlobalStatsForGame/v1', $query);
+        return $this->request('ISteamUserStats/GetGlobalStatsForGame/v1', $query);
     }
 
     /**
@@ -54,7 +54,7 @@ class SteamUserStatsApiSection extends AbstractSteamApiSection
      */
     public function getPlayerAchievements(int $steamId, int $appId)
     {
-        return $this->request('SteamUserStats/GetPlayerAchievements/v1', ['steamid' => $steamId, 'appid' => $appId]);
+        return $this->request('ISteamUserStats/GetPlayerAchievements/v1', ['steamid' => $steamId, 'appid' => $appId]);
     }
 
     /**
@@ -67,7 +67,7 @@ class SteamUserStatsApiSection extends AbstractSteamApiSection
      */
     public function getUserStatsForGame(int $steamId, int $appId)
     {
-        return $this->request('SteamUserStats/GetUserStatsForGame/v2', ['steamid' => $steamId, 'appid' => $appId]);
+        return $this->request('ISteamUserStats/GetUserStatsForGame/v2', ['steamid' => $steamId, 'appid' => $appId]);
     }
 
     /**
@@ -79,7 +79,7 @@ class SteamUserStatsApiSection extends AbstractSteamApiSection
      */
     public function getSchemaForGame(int $appId)
     {
-        return $this->request('SteamUserStats/GetSchemaForGame/v2', ['appid' => $appId]);
+        return $this->request('ISteamUserStats/GetSchemaForGame/v2', ['appid' => $appId]);
     }
 
     /**
@@ -89,6 +89,6 @@ class SteamUserStatsApiSection extends AbstractSteamApiSection
      */
     public function getNumberOfCurrentPlayers(int $appId)
     {
-        return $this->request('SteamUserStats/GetNumberOfCurrentPlayers/v1', ['appid' => $appId]);
+        return $this->request('ISteamUserStats/GetNumberOfCurrentPlayers/v1', ['appid' => $appId]);
     }
 }

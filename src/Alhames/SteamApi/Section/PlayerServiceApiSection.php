@@ -31,7 +31,7 @@ class PlayerServiceApiSection extends AbstractSteamApiSection
             $query = ['input_json' => \GuzzleHttp\json_encode($query)];
         }
 
-        return $this->request('PlayerService/GetOwnedGames/v1', $query);
+        return $this->request('IPlayerService/GetOwnedGames/v1', $query);
     }
 
     /**
@@ -49,7 +49,7 @@ class PlayerServiceApiSection extends AbstractSteamApiSection
             $query['count'] = $count;
         }
 
-        return $this->request('PlayerService/GetRecentlyPlayedGames/v1', $query);
+        return $this->request('IPlayerService/GetRecentlyPlayedGames/v1', $query);
     }
 
     /**
@@ -62,7 +62,7 @@ class PlayerServiceApiSection extends AbstractSteamApiSection
      */
     public function isPlayingSharedGame(int $steamId, int $appId)
     {
-        return $this->request('PlayerService/IsPlayingSharedGame/v1', ['steamid' => $steamId, 'appid_playing' => $appId]);
+        return $this->request('IPlayerService/IsPlayingSharedGame/v1', ['steamid' => $steamId, 'appid_playing' => $appId]);
     }
 
     /**
@@ -72,7 +72,7 @@ class PlayerServiceApiSection extends AbstractSteamApiSection
      */
     public function getSteamLevel(int $steamId)
     {
-        return $this->request('PlayerService/GetSteamLevel/v1', ['steamid' => $steamId]);
+        return $this->request('IPlayerService/GetSteamLevel/v1', ['steamid' => $steamId]);
     }
 
     /**
@@ -82,7 +82,7 @@ class PlayerServiceApiSection extends AbstractSteamApiSection
      */
     public function getBadges(int $steamId)
     {
-        return $this->request('PlayerService/GetBadges/v1', ['steamid' => $steamId]);
+        return $this->request('IPlayerService/GetBadges/v1', ['steamid' => $steamId]);
     }
 
     /**
@@ -93,6 +93,6 @@ class PlayerServiceApiSection extends AbstractSteamApiSection
      */
     public function getCommunityBadgeProgress(int $steamId, int $badgeId)
     {
-        return $this->request('PlayerService/GetCommunityBadgeProgress/v1', ['steamid' => $steamId, 'badgeid' => $badgeId]);
+        return $this->request('IPlayerService/GetCommunityBadgeProgress/v1', ['steamid' => $steamId, 'badgeid' => $badgeId]);
     }
 }
