@@ -2,8 +2,10 @@
 
 namespace Alhames\SteamApi;
 
+use Alhames\Api\Exception\ApiExceptionInterface;
 use Alhames\Api\HttpClient;
 use Alhames\Api\HttpInterface;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Trait SteamApiTrait.
@@ -22,6 +24,9 @@ trait SteamApiTrait
      * @param array  $query
      * @param string $httpMethod
      *
+     * @throws ApiExceptionInterface
+     * @throws GuzzleException
+     *
      * @return mixed
      */
     public function request(string $method, array $query = [], string $httpMethod = HttpInterface::METHOD_GET)
@@ -34,7 +39,7 @@ trait SteamApiTrait
             $query['l'] = $this->locale;
         }
 
-        return $this->httpClient->requestJson($httpMethod, $this->getApiUri($method), $query);
+        return $this->httpClient->requestJson($httpMethod, $this->getApiEndpoint($method), $query);
     }
 
     /**
@@ -42,7 +47,7 @@ trait SteamApiTrait
      *
      * @return string
      */
-    protected function getApiUri(string $method): string
+    protected function getApiEndpoint(string $method): string
     {
         return sprintf('http://api.steampowered.com/%s/', trim($method, '/'));
     }

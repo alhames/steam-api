@@ -34,7 +34,7 @@ class StoreApiSection extends AbstractSteamApiSection
     /**
      * {@inheritdoc}
      */
-    protected function getApiUri(string $method): string
+    protected function getApiEndpoint(string $method): string
     {
         return 'https://store.steampowered.com/api/'.$method.'/';
     }

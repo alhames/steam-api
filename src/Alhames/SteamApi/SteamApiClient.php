@@ -82,7 +82,7 @@ class SteamApiClient extends AbstractOpenId2Client
     /**
      * {@inheritdoc}
      */
-    protected function getEndpoint(): string
+    protected function getAuthEndpoint(): string
     {
         return 'https://steamcommunity.com/openid/login';
     }
