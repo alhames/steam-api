@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Steam API Interface package.
+ *
+ * (c) Pavel Logachev <alhames@mail.ru>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Alhames\SteamApi;
 
 use Alhames\Api\Authentication\AbstractOpenId2Client;
@@ -14,11 +23,11 @@ use PhpHelper\Str;
  * @see https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI
  * @see https://wiki.teamfortress.com/wiki/WebAPI
  *
- * @property-read Section\SteamUserApiSection      $steamUser
- * @property-read Section\SteamUserStatsApiSection $steamUserStats
- * @property-read Section\PlayerServiceApiSection  $playerService
- * @property-read Section\SteamAppsApiSection      $steamApps
- * @property-read Section\StoreApiSection          $store
+ * @property Section\SteamUserApiSection      $steamUser
+ * @property Section\SteamUserStatsApiSection $steamUserStats
+ * @property Section\PlayerServiceApiSection  $playerService
+ * @property Section\SteamAppsApiSection      $steamApps
+ * @property Section\StoreApiSection          $store
  */
 class SteamApiClient extends AbstractOpenId2Client
 {
