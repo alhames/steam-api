@@ -6,7 +6,7 @@
     "type": "library",
     "require": {
         "php": "^7.1",
-        "alhames/api": "dev-master",
+        "alhames/api": "^1.0",
         "alhames/phphelper": "^1.1"
     },
     "license": "MIT",
